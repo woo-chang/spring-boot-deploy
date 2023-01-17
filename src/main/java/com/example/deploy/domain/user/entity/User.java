@@ -33,7 +33,7 @@ public class User {
   private String introduce;
 
   @Builder
-  public User(String name, String loginId, String password, String introduce) {
+  private User(String name, String loginId, String password, String introduce) {
     this.name = name;
     this.loginId = loginId;
     this.password = password;
