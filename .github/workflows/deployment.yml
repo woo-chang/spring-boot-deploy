@@ -29,6 +29,12 @@ jobs:
           java-version: 17
           distribution: temurin
 
+      - name: 환경 파일을 생성한다.
+        working-directory: ./docker
+        run: |
+          touch .env
+          echo "${{ secrets.DOCKER_ENV }}" >> .env
+
       - name: 설정 파일을 생성한다.
         working-directory: ./src/main/resources
         run: |
