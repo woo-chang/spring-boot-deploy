@@ -3,7 +3,7 @@ version: "3.5"
 services:
   db:
     container_name: db
-    image: deploy-db
+    image: deploy-dbf
     environment:
       - MYSQL_DATABASE=${MYSQL_DATABASE}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
