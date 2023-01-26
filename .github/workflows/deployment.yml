@@ -32,8 +32,8 @@ jobs:
       - name: 설정 파일을 생성한다.
         working-directory: ./src/main/resources
         run: |
-          touch application.properties
-          echo '${{ secrets.APPLICATION_PROPERTIES }}' >> application.properties
+          touch application.yml
+          echo '${{ secrets.APPLICATION_PROPERTIES }}' >> application.yml
 
       - name: 도커를 통해 DB 이미지를 생성한다.
         working-directory: ./docker
