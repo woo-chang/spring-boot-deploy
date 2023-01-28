@@ -49,7 +49,9 @@ jobs:
           echo '${{ secrets.APPLICATION_PROPERTIES }}' >> application.yml
 
       - name: DB 이미지를 내려받는다.
-        run: docker pull ghcr.io/${{ github.actor }}/${{ secrets.DEPLOY_DB_TAG }}
+        run: |
+          docker pull ghcr.io/${{ github.actor }}/${{ secrets.DEPLOY_DB_TAG }}
+          docker tag ghcr.io/${{ github.actor }}/${{ secrets.DEPLOY_DB_TAG }} ${{ secrets.DEPLOY_DB_TAG }}
 
       - name: 도커 컴포즈를 활용해 테스트를 위한 컨테이너 환경을 구성한다.
         working-directory: ./docker
